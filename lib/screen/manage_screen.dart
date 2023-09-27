@@ -16,12 +16,6 @@ class _ManageScreenState extends State<ManageScreen> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue,
-          leading: IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.arrow_back,
-                color: Colors.white,
-              )),
           centerTitle: true,
           title: Text(
             "Manage Producats",
@@ -64,7 +58,7 @@ class _ManageScreenState extends State<ManageScreen> {
                                     width: 20,
                                   ),
                                   Text(
-                                    "${e['Name']}",
+                                    "${e['Producat Name']}",
                                     style: TextStyle(
                                         color: Colors.black, fontSize: 20),
                                   ),
@@ -72,13 +66,15 @@ class _ManageScreenState extends State<ManageScreen> {
                                     width: 30,
                                   ),
                                   Text(
-                                    "${e['Total']}",
+                                    "${e['Total']} Tk",
                                     style: TextStyle(
                                         color: Colors.black, fontSize: 20),
                                   ),
                                   Spacer(),
                                   IconButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.pushNamed(context, 'invoice',arguments: e);
+                                      },
                                       icon: Icon(
                                         Icons.edit,
                                         color: Colors.black,
@@ -96,9 +92,28 @@ class _ManageScreenState extends State<ManageScreen> {
                                     width: 20,
                                   ),
                                   Text(
-                                    "${e['Producat Name']}",
+                                    "${e['Name']}",
                                     style: TextStyle(
                                         color: Colors.black, fontSize: 20),
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Text(
+                                    "${e['Type']}",
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 20),
+                                  ),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Text(
+                                    "${e['Bonus']}",
+                                    style: TextStyle(
+                                        color: Colors.black, fontSize: 20),
+                                  ),
+                                  SizedBox(
+                                    width: 80,
                                   ),
                                   IconButton(onPressed: (){
                                     setState(() {
@@ -115,6 +130,9 @@ class _ManageScreenState extends State<ManageScreen> {
                 .toList(),
           ),
         ),
+        floatingActionButton: IconButton(onPressed: (){
+          Navigator.pushNamed(context, 'invoice');
+        }, icon: Icon(Icons.add,color: Colors.blue,size: 35,)),
       ),
     );
   }

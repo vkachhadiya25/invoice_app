@@ -20,6 +20,18 @@ class _InvoiceScreenState extends State<InvoiceScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Map? m1 = ModalRoute.of(context)!.settings.arguments as Map? ;
+    if(m1!=null)
+      {
+        txtName.text = m1!['Name'];
+        txtNo.text= m1!['No'];
+        txtProduactName.text = m1!['Producat Name'];
+        total = m1!['Total'];
+        txtQuantity.text = m1!['Quantity'];
+        txtEarn.text = m1!['Bonus'];
+        txtType.text = m1!['Type'];
+      }
+
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -47,7 +59,7 @@ class _InvoiceScreenState extends State<InvoiceScreen> {
                   Navigator.pushNamed(context, 'pdf');
                 },
                 icon: Icon(
-                  Icons.print,
+                  Icons.arrow_forward,
                   color: Colors.white,
                 )),
           ],
@@ -166,8 +178,8 @@ class _InvoiceScreenState extends State<InvoiceScreen> {
                                     "Total": total,
                                   };
                                   Global.g1.invoiceScreenList.add(m1);
-                                  Navigator.pushNamed(context, '/',
-                                      arguments: Duration(seconds: 10));
+                                  Navigator.pushNamed(context, '/')
+                                      .then((e) {});
                                 },
                                 child: Text(
                                   "Submit",
