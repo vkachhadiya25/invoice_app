@@ -73,7 +73,8 @@ class _ManageScreenState extends State<ManageScreen> {
                                   Spacer(),
                                   IconButton(
                                       onPressed: () {
-                                        Navigator.pushNamed(context, 'invoice',arguments: e);
+                                        Navigator.pushNamed(context, 'invoice',
+                                            arguments: e);
                                       },
                                       icon: Icon(
                                         Icons.edit,
@@ -112,12 +113,16 @@ class _ManageScreenState extends State<ManageScreen> {
                                     style: TextStyle(
                                         color: Colors.black, fontSize: 20),
                                   ),
-                                  SizedBox(width: 5,),
-                                  IconButton(onPressed: (){
-                                    setState(() {
-                                      Global.g1.invoiceScreenList.remove(e);
-                                    });
-                                  }, icon: Icon(Icons.delete)),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  IconButton(
+                                      onPressed: () {
+                                        setState(() {
+                                          Global.g1.invoiceScreenList.remove(e);
+                                        });
+                                      },
+                                      icon: Icon(Icons.delete)),
                                 ],
                               )
                             ],
@@ -128,9 +133,17 @@ class _ManageScreenState extends State<ManageScreen> {
                 .toList(),
           ),
         ),
-        floatingActionButton: IconButton(onPressed: (){
-          Navigator.pushNamed(context, 'invoice');
-        }, icon: Icon(Icons.add,color: Colors.blue,size: 35,)),
+        floatingActionButton: IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, 'invoice').then((value) {
+                setState(() {});
+              });
+            },
+            icon: Icon(
+              Icons.add,
+              color: Colors.blue,
+              size: 35,
+            )),
       ),
     );
   }

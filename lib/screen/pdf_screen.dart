@@ -158,6 +158,5 @@ class _PdfScreenState extends State<PdfScreen> {
         ),
       ),
     );
-
   }
 }
