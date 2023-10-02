@@ -55,9 +55,7 @@ class _InvoiceScreenState extends State<InvoiceScreen> {
                   color: Colors.white,
                 )),
             IconButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, 'pdf');
-                },
+                onPressed: () {},
                 icon: Icon(
                   Icons.arrow_forward,
                   color: Colors.white,

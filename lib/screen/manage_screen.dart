@@ -24,7 +24,7 @@ class _ManageScreenState extends State<ManageScreen> {
           actions: [
             IconButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, 'invoice');
+                  Navigator.pushNamed(context, 'pdf');
                 },
                 icon: Icon(
                   Icons.add,
@@ -112,9 +112,7 @@ class _ManageScreenState extends State<ManageScreen> {
                                     style: TextStyle(
                                         color: Colors.black, fontSize: 20),
                                   ),
-                                  SizedBox(
-                                    width: 80,
-                                  ),
+                                  SizedBox(width: 5,),
                                   IconButton(onPressed: (){
                                     setState(() {
                                       Global.g1.invoiceScreenList.remove(e);
