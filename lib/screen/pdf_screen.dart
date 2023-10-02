@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invoice_app/utils/pdf.dart';
 import 'package:pdf/pdf.dart';
 import 'package:printing/printing.dart';
 
@@ -20,7 +21,9 @@ class _PdfScreenState extends State<PdfScreen> {
           backgroundColor: Colors.blue,
           actions: [
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  pdfGenrete();
+                },
                 icon: Icon(
                   Icons.print,
                   color: Colors.white,

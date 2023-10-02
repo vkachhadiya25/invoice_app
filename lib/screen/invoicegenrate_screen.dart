@@ -176,8 +176,7 @@ class _InvoiceScreenState extends State<InvoiceScreen> {
                                     "Total": total,
                                   };
                                   Global.g1.invoiceScreenList.add(m1);
-                                  Navigator.pushNamed(context, '/')
-                                      .then((e) {});
+                                  Navigator.pop(context);
                                 },
                                 child: Text(
                                   "Submit",
